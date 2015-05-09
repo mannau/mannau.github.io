@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "tm.plugin.webmining 1.3 on CRAN"
+categories: [textmining, tm.plugin.webmining]
+tags: [r, release, textmining, tm.plugin.webmining]
+---
+
+The newest version of tm.plugin.webmining 1.3 has now been released CRAN including minor changes and bug-fixes. 
+
+Show plot below:
+```{r}
+plot(cars, pch = 19, col = "red")
+```
+bla bla bla
+
