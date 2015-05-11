@@ -5,7 +5,12 @@ categories: [textmining, boilerpipeR]
 tags: [r, release, textmining, boilerpipeR]
 ---
 
-The newest version of tm.plugin.webmining 1.3 has now been released CRAN including minor changes and bug-fixes. 
+The newest version of tm.plugin.webmining 1.3 has now been released CRAN 
+including minor changes and bug-fixes:
+- Test
+- Test
+- Test
+
 
 
 ```r
