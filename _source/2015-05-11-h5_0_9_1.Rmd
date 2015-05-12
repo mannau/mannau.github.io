@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "h5 0.9.1 on CRAN"
+categories: [HDF5, h5]
+tags: [r, release]
+---
+
+After all the submission work is done and I can write about my little journey about 
+implementing **h5**, an interface to the HDF5 library in C++ using Rcpp.
+

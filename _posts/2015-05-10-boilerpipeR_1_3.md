@@ -5,35 +5,45 @@ categories: [textmining, boilerpipeR]
 tags: [r, release, textmining, boilerpipeR]
 ---
 
-The newest version of tm.plugin.webmining 1.3 has now been released CRAN 
-including minor changes and bug-fixes:
-- Test
-- Test
-- Test
+The newest version of **boilerpipeR** 1.3 has now been released on 
+[CRAN](http://cran.r-project.org/web/packages/boilerpipeR/index.html) including 
+minor doc changes and bug-fixes. The package is essentially an R-wrapper for 
+Christian Kohlschutters boilerpipe Java library to extract the main content from 
+HTML files (see [library](https://code.google.com/p/boilerpipe) and 
+[paper](http://www.l3s.de/~kohlschuetter/boilerplate)).
 
+The functionality of boilerpipeR is shown in one simple example to extract
+the main content from a Reuters news site. Firstly, we need to download the
+content of the HTML file using e.g. **RCurl**
 
 
 ```r
-A = 1:100
-test <- data.frame(A, B = sin(A))
-plot(test$A, test$B)
+library(boilerpipeR)
+library(RCurl)
 ```
 
-![plot of chunk unnamed-chunk-1](/figure/source/2015-05-10-boilerpipeR_1_3/unnamed-chunk-1-1.png) 
-
-Show plot below:
 
 ```r
-1+1
+url <- "http://www.reuters.com/article/2015/05/12/us-russia-usa-idUSKBN0NX0LG20150512"
+content <- getURL(url)
+substr(content, 1, 80)
 ```
 
 ```
-## [1] 2
+## [1] "<!--[if !IE]> This has been served from cache <![endif]-->\n<!--[if !IE]> Request"
 ```
+
+The requested content still includes HTML boilerplate like banners, sidebars, etc.
+We can get rid of the content using one of boilerpipe's content extractors, e.g.
+using the *ArticleExtractor* we can extract the content using
+
 
 ```r
-plot(cars, pch = 19, col = "blue")
+url <- "http://www.reuters.com/article/2015/05/12/us-russia-usa-idUSKBN0NX0LG20150512"
+content.extract <- ArticleExtractor(content)
+substr(content.extract, 1, 80)
 ```
 
-![plot of chunk unnamed-chunk-2](/figure/source/2015-05-10-boilerpipeR_1_3/unnamed-chunk-2-1.png) 
-bla bla bla
+```
+## [1] "SOCHI, Russia | By Arshad Mohammed and Denis Dyomkin\nSOCHI, Russia Top U.S. and "
+```
