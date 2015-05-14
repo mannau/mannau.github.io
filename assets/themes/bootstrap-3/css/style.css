@@ -108,3 +108,12 @@ body {
 .navbar-header {
   font-family: 'Droid Sans', sans-serif;
 }
+
+/* set a max-width for horizontal fluid layout and make it centered */
+.container {
+  max-width: 800px; 
+}
+
+.top-one {
+     margin-top: 1cm;
+  }

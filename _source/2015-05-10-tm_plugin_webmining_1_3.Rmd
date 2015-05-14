@@ -12,17 +12,13 @@ structured news feeds (e.g. RSS) and HTML pages in a 2-step procedure:
 2. Download and extract main content for the feed item (through *WebCorpus*)
 
 The newest version of **tm.plugin.webmining** 1.3 has now been 
-released on [CRAN](CRAN-tm.plugin.webmining) including minor changes and bug-fixes:
+released on [CRAN](http://cran.r-project.org/web/packages/tm.plugin.webmining/index.html) including minor changes and bug-fixes:
 
-- Fix [issue](#7) with Yahoo 
+- Fix [issue](https://github.com/mannau/tm.plugin.webmining/issues/7) with Yahoo 
   News Source; since Yahoo News seems to have de-activated RSS feeds we now switched to 
   HTML retrieval. Thanks Eliano for reporting!
-- Fix retrieval [issue](#6) 
+- Fix retrieval [issue](https://github.com/mannau/tm.plugin.webmining/issues/6) 
   with NYTimes Source.
-
-[CRAN-tm.plugin.webmining]: http://cran.r-project.org/web/packages/tm.plugin.webmining/index.html
-[#6]: https://github.com/mannau/tm.plugin.webmining/issues/6
-[#7]: https://github.com/mannau/tm.plugin.webmining/issues/7
 
 <!--more-->
 
