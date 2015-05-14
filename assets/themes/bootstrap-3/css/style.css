@@ -13,13 +13,35 @@
 /*.navbar .nav {
   float: right; }*/
 
-/* Jekyll Bootstrap Colors */
+/* Jekyll Bootstrap Colors 
 h1, h2, h3, h4 {
   color: #f22430;
+}*/
+
+h1, h2, h3, h4 {
+  font-family: 'Droid Sans', sans-serif;
 }
+
+h1 {
+  
+}
+
+body {
+  font-family: 'Droid Serif', serif;
+}
+
+/*
 #footer {
   background-color: #fdcd60;
+}*/
+
+.masthead {
+    color:#FFFFFF;
+    background-image:url("http://i.imgur.com/CtWlB0v.jpg?1");
+    background-repeat:no-repeat;
+    height:200px;
 }
+
 
 
 
@@ -77,3 +99,12 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+  
+.jumbotron {
+  font-family: 'Droid Sans', sans-serif;
+  border: 4px solid #C70000;}
+}
+
+.navbar-header {
+  font-family: 'Droid Sans', sans-serif;
+}

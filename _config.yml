@@ -11,7 +11,7 @@ markdown: redcarpet
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Mario Annau
+title : Predicting Daemon
 tagline: Site Tagline
 author :
   name : Mario Annau
@@ -23,6 +23,8 @@ author :
 # Enable pagination
 paginate: 10
 paginate_path: "/blog/page:num/"
+
+excerpt_separator: <!--more-->
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

@@ -1,9 +1,15 @@
 ---
 layout: post
 title:  "tm.plugin.webmining 1.3 on CRAN"
-categories: [textmining, tm.plugin.webmining]
-tags: [r, release, textmining, tm.plugin.webmining]
+categories: [Textmining, tm.plugin.webmining]
+tags: [R, Release]
 ---
+
+**tm.plugin.webmining** supports the retrieval of full-text content from 
+structured news feeds (e.g. RSS) and HTML pages in a 2-step procedure:
+
+1. Download meta data from the feed (through *WebSource*)
+2. Download and extract main content for the feed item (through *WebCorpus*)
 
 The newest version of **tm.plugin.webmining** 1.3 has now been 
 released on [CRAN](CRAN-tm.plugin.webmining) including minor changes and bug-fixes:
@@ -18,11 +24,7 @@ released on [CRAN](CRAN-tm.plugin.webmining) including minor changes and bug-fix
 [#6]: https://github.com/mannau/tm.plugin.webmining/issues/6
 [#7]: https://github.com/mannau/tm.plugin.webmining/issues/7
 
-**tm.plugin.webmining** supports the retrieval of full-text content from 
-structured news feeds (e.g. RSS) and HTML pages in a 2-step procedure:
-
-1. Download meta data from the feed (through *WebSource*)
-2. Download and extract main content for the feed item (through *WebCorpus*)
+<!--more-->
 
 To retrieve current financial news for Tesla (TSLA) from Google Finance we can 
 use the following code:

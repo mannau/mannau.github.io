@@ -1,17 +1,28 @@
 ---
 layout: default
-title: My Blog
+title: Statistical Programming Blog 
 ---
+
+
+  <div class="jumbotron">
+	<div class="pull-left ">
+	            <img hspace=20 alt=" " src="/images/demon_transparent_logo_red6_transparent_medium.png">
+	</div>
+      <h1 style="font-family: 'Droid Serif', sans-serif;color:#C70000">Predicting Daemon</h1> 
+      <p>Statistical Programming &mdash; Machine Learning &mdash; Finance</p> 
+  </div>
+
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
   <p class="author">
-    <span class="date">{{ post.date }}</span>
+    <span class="date">{{ post.date | date: "%-d %B %Y"}}</span>
   </p>
   <div class="content">
     {{ post.excerpt }}
   </div>
+  <p class="bottom-one">
 {% endfor %}
 
 <!-- Pagination links -->

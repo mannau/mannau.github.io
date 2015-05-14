@@ -1,19 +1,9 @@
 ---
 layout: post
 title:  "tm.plugin.webmining 1.3 on CRAN"
-categories: [textmining, tm.plugin.webmining]
-tags: [r, release, textmining, tm.plugin.webmining]
+categories: [Textmining, tm.plugin.webmining]
+tags: [R, Release]
 ---
-
-The newest version of **tm.plugin.webmining** 1.3 has now been 
-released on [CRAN](http://cran.r-project.org/web/packages/tm.plugin.webmining/index.html) 
-including minor changes and bug-fixes:
-
-- Fix [bug](https://github.com/mannau/tm.plugin.webmining/issues/7) with Yahoo 
-  News Source; since Yahoo News seems to have de-activated RSS feeds we now switched to 
-  HTML retrieval (issued by Eliano).
-- Fix retrieval [bug](https://github.com/mannau/tm.plugin.webmining/issues/6) 
-  with NYTimes Source (issued by robbig2871).
 
 **tm.plugin.webmining** supports the retrieval of full-text content from 
 structured news feeds (e.g. RSS) and HTML pages in a 2-step procedure:
@@ -21,8 +11,24 @@ structured news feeds (e.g. RSS) and HTML pages in a 2-step procedure:
 1. Download meta data from the feed (through *WebSource*)
 2. Download and extract main content for the feed item (through *WebCorpus*)
 
+The newest version of **tm.plugin.webmining** 1.3 has now been 
+released on [CRAN](CRAN-tm.plugin.webmining) including minor changes and bug-fixes:
+
+- Fix [issue](#7) with Yahoo 
+  News Source; since Yahoo News seems to have de-activated RSS feeds we now switched to 
+  HTML retrieval. Thanks Eliano for reporting!
+- Fix retrieval [issue](#6) 
+  with NYTimes Source.
+
+[CRAN-tm.plugin.webmining]: http://cran.r-project.org/web/packages/tm.plugin.webmining/index.html
+[#6]: https://github.com/mannau/tm.plugin.webmining/issues/6
+[#7]: https://github.com/mannau/tm.plugin.webmining/issues/7
+
+<!--more-->
+
 To retrieve current financial news for Tesla (TSLA) from Google Finance we can 
 use the following code:
+
 
 ```r
 library(tm)

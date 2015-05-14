@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "boilerpipeR 1.3 on CRAN"
-categories: [textmining, boilerpipeR]
-tags: [r, release, textmining, boilerpipeR]
+categories: [Textmining, boilerpipeR]
+tags: [R, Release]
 ---
 
 The newest version of **boilerpipeR** 1.3 has now been released on 
@@ -11,6 +11,8 @@ minor doc changes and bug-fixes. The package is essentially an R-wrapper for
 Christian Kohlschutters boilerpipe Java library to extract the main content from 
 HTML files (see [library](https://code.google.com/p/boilerpipe) and 
 [paper](http://www.l3s.de/~kohlschuetter/boilerplate)).
+
+<!--more-->
 
 The functionality of boilerpipeR is shown in one simple example to extract
 the main content from a Reuters news site. Firstly, we need to download the
