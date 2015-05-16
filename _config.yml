@@ -91,7 +91,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : mannau
+      short_name : predictingdaemon
     livefyre :
       site_id : 123
     intensedebate :

@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
 }*/
 
 h1, h2, h3, h4 {
-  font-family: 'Droid Sans', sans-serif;
+  font-family: 'Roboto Condensed';
 }
 
 h1 {
@@ -27,8 +27,14 @@ h1 {
 }
 
 body {
-  font-family: 'Droid Serif', serif;
+  font-family: 'Roboto';
+  font-size: 160%;
 }
+
+* {
+	text-rendering: optimizeLegibility;
+}
+
 
 /*
 #footer {
@@ -42,8 +48,48 @@ body {
     height:200px;
 }
 
+.date {
+  color: #bdbdbd;
+}
 
+.header {
+  top: 0px;
+  
+  
+  padding-bottom: 10px;
+  background-color: #c70000;
+  
+}
 
+.header-title {
+
+  padding-top: 30px;
+  padding-left: 20px;
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.header-subtitle {
+  padding-left: 20px;
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #bdbdbd;
+  padding-bottom: 5px;
+}
+
+.wrap {
+  margin-top: 0px;
+}
+
+.headerimage {
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+
+a.headerlink { color: white; }
 
 /* posts index */
 .post > h3.title {
@@ -100,11 +146,6 @@ body {
   border: 1px solid #4c964d;
   color: #FFF; }
   
-.jumbotron {
-  font-family: 'Droid Sans', sans-serif;
-  border: 4px solid #C70000;}
-}
-
 .navbar-header {
   font-family: 'Droid Sans', sans-serif;
 }
