@@ -63,7 +63,7 @@ body {
 
 .header-title {
 
-  padding-top: 30px;
+  padding-top: 60px;
   padding-left: 20px;
   margin: 0px;
   margin-top: 0px;
@@ -81,6 +81,11 @@ body {
 
 .wrap {
   margin-top: 0px;
+}
+
+.navbar-default {
+  background-color: #939393;
+
 }
 
 .headerimage {
@@ -158,3 +163,4 @@ a.headerlink { color: white; }
 .top-one {
      margin-top: 1cm;
   }
+  
