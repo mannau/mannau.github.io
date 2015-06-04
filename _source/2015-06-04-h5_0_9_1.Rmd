@@ -1,0 +1,95 @@
+---
+layout: post
+title:  Working with HDF5 files in R using h5
+categories: [HDF5, h5]
+tags: [R, Release]
+---
+
+After quite some work I'm happy to announce the CRAN release of 
+**[h5](http://cran.r-project.org/web/packages/h5/index.html)** - an R 
+interface to the [HDF5](https://www.hdfgroup.org/HDF5/) library. It utilizes the 
+[HDF5 C++ API](https://www.hdfgroup.org/HDF5/doc/cpplus_RM/) through 
+**[Rcpp](http://cran.r-project.org/web/packages/Rcpp/index.html)** and S4 classes. 
+Although the package is still under heavy development with some 
+[issues](https://github.com/mannau/h5/issues) remaining it is already covered by 
+200+ test cases and runs on all major platforms (Windows, OS X, Linux). I 
+started working on the package after experiencing some speed and usability issues 
+with existing packages (e.g. **[rhdf5](http://www.bioconductor.org/packages/release/bioc/html/rhdf5.html)**). 
+
+<!--more-->
+
+[HDF5](https://www.hdfgroup.org/HDF5/) is an excellent library and data model to 
+store huge amounts of data in a binary file format. Supporting most major 
+platforms and programming languages it can be used to exchange data files in a 
+language independent format. Compared to R's integrated *save()* and *load()* 
+functions it also supports access to only parts of the binary data files and can
+therefore be used to process data not fitting into memory.
+
+Now it's time for a small **h5** use case. First we create an HDF5 file and store
+a numeric vector, an integer matrix and a character array.
+
+```{r h5-0, results='hide', echo=FALSE}
+library(methods)
+if(file.exists("test.h5")) {
+	file.remove("test.h5")
+}
+```
+
+```{r h5-1, results='hide', message=FALSE, warning=FALSE}
+library(h5)
+testvec <- rnorm(10)
+testmat <- matrix(1:9, nrow = 3)
+row.names(testmat) <- 1:3
+colnames(testmat) <- c("A", "BE", "BU")
+letters1 <- paste(LETTERS[runif(45, min = 1, max = length(LETTERS))])
+letters2 <- paste(LETTERS[runif(45, min = 1, max = length(LETTERS))])
+testarray <- array(paste0(letters1, letters2), c(3, 3, 5))
+
+file <- h5file("test.h5")
+# Save testvec in group 'test' as DataSet 'testvec'
+file["test", "testvec"] <- testvec
+file["test", "testmat"] <- testmat
+file["test", "testarray"] <- testarray
+h5close(file)
+```
+
+We can now retrieve the data from the file
+
+```{r h5-2, results='show', message=FALSE, warning=FALSE}
+file <- H5File("test.h5")
+dataset_testmat <- file["test", "testmat"]
+# We can now retrieve all data from the DataSet object using e.g. the  subsetting operator
+dataset_testmat[]
+
+# We can also subset the data directly, e.g. row 1 and 3
+dataset_testmat[c(1, 3), ]
+```
+
+Note, that we have now lost the row- and column names associated with the *testmat* object
+in the retrieved matrix. HDF5 supports metadata with attributes, which we need to
+add to (retrieve from) the DataSet manually.
+
+```{r h5-3, results='hide', message=FALSE, warning=FALSE}
+h5attr(dataset_testmat, "rownames") <- row.names(testmat)
+h5attr(dataset_testmat, "colnames") <- colnames(testmat)
+```
+
+We can now retrieve our matrix including meta-data as follows:
+
+```{r h5-4, results='show', message=FALSE, warning=FALSE}
+outmat <- dataset_testmat[]
+row.names(outmat) <- h5attr(dataset_testmat, "rownames")
+colnames(outmat) <- h5attr(dataset_testmat, "colnames")
+identical(outmat, testmat)
+```
+
+Do not forget to close the HDF5 file in the end
+
+```{r h5-5, results='hide', message=FALSE, warning=FALSE}
+h5close(file)
+```
+
+You can find many more code examples as unit tests in the **h5** package.
+
+The next blog post will cover selection and hyperslabs in more detail, stay
+tuned... 
