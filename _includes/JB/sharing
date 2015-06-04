@@ -1,9 +1,6 @@
-{% include JB/is_production %}
-{% if is_production and site.JB.sharing.provider and page.JB.sharing != false %}
-
-{% case site.JB.sharing.provider %}
-{% when "custom" %}
-  {% include custom/sharing %}
-{% endcase %}
-
+{% if page.sharing != false %}
+	<div class="socialbuttons">{% include JB/sharing-providers/linkedin %}</div>
+	<div class="socialbuttons">{% include JB/sharing-providers/twitter %}</div>
+	<div class="socialbuttons">{% include JB/sharing-providers/googleplus %}</div>
+	<div class="socialbuttons">{% include JB/sharing-providers/facebook %}</div>
 {% endif %}

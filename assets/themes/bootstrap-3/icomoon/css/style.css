@@ -1,0 +1,94 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-yh1f0g');
+	src:url('../fonts/icomoon.eot?#iefix-yh1f0g') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?-yh1f0g') format('truetype'),
+		url('../fonts/icomoon.woff?-yh1f0g') format('woff'),
+		url('../fonts/icomoon.svg?-yh1f0g#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 25px;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-google-plus2:before {
+	content: "\ea89";
+}
+.icon-facebook2:before {
+	content: "\ea8d";
+}
+.icon-twitter2:before {
+	content: "\ea92";
+}
+.icon-feed3:before {
+	content: "\ea95";
+}
+.icon-github:before {
+	content: "\eab1";
+}
+.icon-linkedin:before {
+	content: "\eac8";
+}
+
+.ic-gplus {
+	color: #23527c;
+}
+
+.ic-gplus:hover {
+	color: #d93b2b;
+}
+
+.ic-facebook{
+	color: #23527c;
+}
+
+.ic-facebook:hover {
+	color: #395597;
+}
+
+.ic-linkedin {
+	color: #23527c;
+}
+
+.ic-linkedin:hover {
+	color: #1a85bd;
+}
+
+.ic-twitter {
+	color: #23527c;
+}
+
+.ic-twitter:hover {
+	color: #339cc3;
+}
+
+.ic-github{
+	color: #23527c;
+}
+
+.ic-github:hover {
+	color: #819aa9;
+}
+
+.ic-rss{
+	color: #23527c;
+}
+
+.ic-rss:hover {
+	color: #FFA500;
+}
+
+
